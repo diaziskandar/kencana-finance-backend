@@ -1,0 +1,14 @@
+services:
+  backend:
+    build: .
+    container_name: kencana_backend
+    ports:
+      - "8080:8080"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      - kencana-net
+
+networks:
+  kencana-net:
+    driver: bridge
